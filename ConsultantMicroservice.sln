@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsultantFunction", "Consu
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsultantData", "ConsultantData\ConsultantData.csproj", "{80730ADF-4C8D-4E46-9923-D35B3308BD06}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsultantService", "ConsultantService\ConsultantService.csproj", "{542D3735-48B4-4B66-A59D-404F921F3A9A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{80730ADF-4C8D-4E46-9923-D35B3308BD06}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{80730ADF-4C8D-4E46-9923-D35B3308BD06}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{80730ADF-4C8D-4E46-9923-D35B3308BD06}.Release|Any CPU.Build.0 = Release|Any CPU
+		{542D3735-48B4-4B66-A59D-404F921F3A9A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{542D3735-48B4-4B66-A59D-404F921F3A9A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{542D3735-48B4-4B66-A59D-404F921F3A9A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{542D3735-48B4-4B66-A59D-404F921F3A9A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
