@@ -7,29 +7,49 @@ namespace ConsultantService.Repositories
 {
     public class SQLConsultantRepository : IConsultantRepository
     {
-        public bool AddConsultant(Consultant consultant)
+        readonly private ConsultantContext context;
+
+        public SQLConsultantRepository(ConsultantContext context)
         {
-            throw new NotImplementedException();
+            this.context = context;
         }
 
-        public bool DeleteConsultant(Consultant consultant)
+        public void AddConsultant(Consultant consultant)
         {
-            throw new NotImplementedException();
+            context.Consultants.Add(consultant);
+            context.SaveChanges();
+        }
+
+        public void DeleteConsultant(Consultant consultant)
+        {
+            context.Consultants.Remove(consultant);
+            context.SaveChanges();
         }
 
         public Consultant GetConsultant(int id)
         {
-            throw new NotImplementedException();
+            if (id <= 0)
+            {
+                throw new ArgumentOutOfRangeException();
+            }
+
+            if (context.Consultants.Find(id) == null)
+            {
+                throw new ArgumentOutOfRangeException();
+            }
+
+            return context.Consultants.Find(id);
         }
 
         public IEnumerable<Consultant> GetConsultants()
         {
-            throw new NotImplementedException();
+            return context.Consultants;
         }
 
-        public bool UpdateConsultant(Consultant consultant)
+        public void UpdateConsultant(Consultant consultant)
         {
-            throw new NotImplementedException();
+            context.Consultants.Update(consultant);
+            context.SaveChanges();
         }
     }
 }

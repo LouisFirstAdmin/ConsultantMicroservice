@@ -7,10 +7,10 @@ namespace ConsultantService.Repositories
 {
     public interface IConsultantRepository
     {
-        bool AddConsultant(Consultant consultant);
+        void AddConsultant(Consultant consultant);
         Consultant GetConsultant(int id);
         IEnumerable<Consultant> GetConsultants();
-        bool UpdateConsultant(Consultant consultant);
-        bool DeleteConsultant(Consultant consultant);
+        void UpdateConsultant(Consultant consultant);
+        void DeleteConsultant(Consultant consultant);
     }
 }

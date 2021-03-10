@@ -21,22 +21,22 @@ namespace ConsultantData.Model
 
 		public DbSet<Consultant> Consultants { get; set; }
 
-		protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-		{
-			configuration = new ConfigurationBuilder()
-				.SetBasePath(Directory.GetParent(AppContext.BaseDirectory).FullName)
-				.AddJsonFile("appsettings.json", false)
-				.Build();
+		//protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+		//{
+		//	configuration = new ConfigurationBuilder()
+		//		.SetBasePath(Directory.GetParent(AppContext.BaseDirectory).FullName)
+		//		.AddJsonFile("appsettings.json", false)
+		//		.Build();
 
-			var connectionString = configuration.GetConnectionString("ConsultantDB");
+		//	var connectionString = configuration.GetConnectionString("ConsultantDB");
 
-			if (connectionString != null)
-			{
-				optionsBuilder.UseSqlServer(
-					connectionString,
-					options => options.MaxBatchSize(150));
-			}
-		}
+		//	if (connectionString != null)
+		//	{
+		//		optionsBuilder.UseSqlServer(
+		//			connectionString,
+		//			options => options.MaxBatchSize(150));
+		//	}
+		//}
 
 		protected override void OnModelCreating(ModelBuilder modelBuilder)
 		{
