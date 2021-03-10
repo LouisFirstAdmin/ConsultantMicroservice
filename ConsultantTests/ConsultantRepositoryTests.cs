@@ -7,6 +7,7 @@ using Xunit;
 
 namespace ConsultantTests
 {
+    //When testing, comment out OnConfiguring method in Context class
     public class ConsultantRepositoryTests
     {
         [Fact(DisplayName = "GetConsultants should return a list of 5 consultants")]
