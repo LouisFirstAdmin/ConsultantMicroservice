@@ -15,6 +15,10 @@ namespace ConsultantData.Model
         {
         }
 
+        public ConsultantContext(DbContextOptions options) : base(options)
+        {
+        }
+
 		public DbSet<Consultant> Consultants { get; set; }
 
 		protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
