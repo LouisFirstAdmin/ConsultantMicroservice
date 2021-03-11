@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Text;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.SqlServer;
 using Microsoft.Extensions.Configuration;
 
 namespace ConsultantData.Model
@@ -21,24 +22,24 @@ namespace ConsultantData.Model
 
 		public DbSet<Consultant> Consultants { get; set; }
 
-		//protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-		//{
-		//	configuration = new ConfigurationBuilder()
-		//		.SetBasePath(Directory.GetParent(AppContext.BaseDirectory).FullName)
-		//		.AddJsonFile("appsettings.json", false)
-		//		.Build();
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        {
+            configuration = new ConfigurationBuilder()
+                .SetBasePath(Directory.GetParent(AppContext.BaseDirectory).FullName)
+                .AddJsonFile("appsettings.json", false)
+                .Build();
 
-		//	var connectionString = configuration.GetConnectionString("ConsultantDB");
+            var connectionString = configuration.GetConnectionString("ConsultantDB");
 
-		//	if (connectionString != null)
-		//	{
-		//		optionsBuilder.UseSqlServer(
-		//			connectionString,
-		//			options => options.MaxBatchSize(150));
-		//	}
-		//}
+            if (connectionString != null)
+            {
+                optionsBuilder.UseSqlServer(
+                    connectionString,
+                    options => options.MaxBatchSize(150));
+            }
+        }
 
-		protected override void OnModelCreating(ModelBuilder modelBuilder)
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
 		{
 			//Consultants
 			modelBuilder.Entity<Consultant>().ToTable("Consultants");

@@ -1,4 +1,5 @@
 ﻿using System;
+using ConsultantService.Repositories;
 
 namespace ConsultantService
 {
@@ -6,7 +7,7 @@ namespace ConsultantService
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            Console.WriteLine();
         }
     }
 }
