@@ -1,9 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
-using ConsultantData.Model;
 
-namespace ConsultantService.Repositories
+namespace ConsultantData.Model
 {
     public interface IConsultantRepository
     {
